@@ -19,7 +19,27 @@ $(function(){
     slidesToScroll: 1,
     prevArrow: '<img class="slider__arrows slider__arrows-left" src="img/left-arrow.svg" alt="">',
     nextArrow: '<img class="slider__arrows slider__arrows-right" src="img/right-arrow.svg" alt="">',
-    asNavFor: '.surf_map, .surf__right-text-dots'
+    asNavFor: '.surf_map, .surf__right-text-dots',
+    responsive: [
+      {
+        breakpoint: 1210,
+        settings: {
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 921,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 661,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
   });
 
   $('.surf_map').slick({
@@ -27,7 +47,21 @@ $(function(){
     slidesToScroll: 1,
     asNavFor: '.surf__slider',
     arrows: false,
-    focusOnSelect: true
+    focusOnSelect: true,
+    responsive: [
+      {
+        breakpoint: 1041,
+        settings:{slidesToShow: 3}
+      },
+      {
+        breakpoint: 921,
+        settings:{slidesToShow: 2}
+      },
+      {
+        breakpoint: 661,
+        settings:{slidesToShow: 1}
+      }
+    ]
   });
   $('.surf__right-text-dots').slick({
     slidesToShow: 1,
@@ -131,6 +165,10 @@ $(function(){
 
   AOS.init({
     once: true
+});
+
+$('.menu-btn').on('click', function(){
+  $('.menu').toggleClass('active');
 });
 });
 
